@@ -1,0 +1,9 @@
+libs = ['opencv_videoio','opencv_core','opencv_imgproc','opencv_highgui','opencv_imgcodecs']
+
+env=Environment(CPPPATH=['/usr/include/boost/', '/usr/local/include/opencv4'],
+    CPPDEFINES=[],
+    LIBS=libs,
+    SCONS_CXX_STANDARD="c++11"
+    )
+
+env.Program('test', Glob('src/*.cpp'))

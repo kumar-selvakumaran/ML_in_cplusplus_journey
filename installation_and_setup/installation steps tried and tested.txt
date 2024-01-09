@@ -6,3 +6,37 @@ sudo ln -sf eigen3/Eigen Eigen
 sudo ln -sf eigen3/unsupported unsupported
 
 #####################
+
+note: MLPACK
+
+when compiling with mlpack header file add "  -fopenmp " option the the complilation command in terminal like so :
+>> " g++ playground.cpp -o mlcpp/testpkg.exe -I/usr/include/opencv4 -fopenmp "
+
+
+######################
+
+micromamba install : https://prefix.dev/docs/mamba/overview
+
+######################
+
+opencv setup lead : 
+
+1. https://github.com/zohaib-khan5040/CPP-OpenCV-VSCode-Setup
+# may have to get install c++ extensions for docker vscode window
+# linkin error in the end, undefined references for all objects classes/functions in cv namespace
+# was able to detect the package tho.
+
+
+2. https://medium.com/@albertqueralto/installing-opencv-within-docker-containers-for-computer-vision-and-development-a93b46996520
+# brilliant for understanding the process
+# detailed explainations, done for docker.
+	missing docker compose to display gui : possible sublead  https://stackoverflow.com/a/50356450/13212182
+
+3. https://marcosnietoblog.wordpress.com/2017/04/30/docker-image-with-opencv-with-x11-forwarding-for-gui/
+# Another Docker implementation :
+
+_________________________________________________
+___________ OPENCV FINAL WORKING _________________
+4. WORKING IMAGE :  https://firstcaptain.github.io/opencv-docker/
+__________________________________________________
+__________________________________________________
