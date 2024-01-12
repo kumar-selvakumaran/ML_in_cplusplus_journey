@@ -1,4 +1,4 @@
-#ERRORS AND SOLVES
+# ERRORS AND SOLVES
 
 1. **ERROR(LEVEL 1)** : //container not starting (no error message, returns to terminal)
 <br>**SOLVE** : docker desktop is probably swithced off, switch it on
