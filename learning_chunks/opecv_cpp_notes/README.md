@@ -1,7 +1,7 @@
 # opencv notes:
 
-<h3><b>cv::Mat</b></h3>
-
+<details>
+<summary style="font-size:2.35vw"> <b>cv::Mat : background, slicing, display : </b></summary>
 reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_image_container.html">cv::Mat tutorial docs</a> 
 
 1. Mat is the object used for storing images as arrays.
@@ -51,13 +51,19 @@ Mat slice{frame(Range(140,145) , Range(140,145))};
 cout << "\nmatrix chunk : \n" << format(slice Formatter::FMT_NUMPY ) <<"\n";
 ```
 ![Alt text](image-1.png)
+</details>
 
 
-8. color spaces and applications :
+<details>
+<summary style="font-size:2.35vw"> <b>color spaces and applications : </b></summary>
+
+reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_image_container.html">cv::Mat tutorial docs</a> 
+
 - ***RGB*** is the most common as our eyes use something similar, however keep in mind that OpenCV standard display system composes colors using the BGR color space (red and blue channels are swapped places).
 - The ***HSV*** and ***HLS*** decompose colors into their hue, saturation and value/luminance components, which is a more natural way for us to describe colors. You might, for example, dismiss the last component, making your algorithm less sensible to the light conditions of the input image.
 - ***YCrCb*** is used by the popular JPEG image format.
 - ***CIE L\*a\*b\**** is a perceptually uniform color space, which comes in handy if you need to measure the distance of a given color to another color.
+<\details>
 ___
 
 
