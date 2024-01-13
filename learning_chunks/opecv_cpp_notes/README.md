@@ -8,7 +8,7 @@ reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_i
 
 2. cv::MAT object consists of a header containing matrix details like matrix dimention details, storing method, pixel value array address.
 
-3. using the copy constructor () / list intializer {} / assigment = will only copy header. i.e. in the below code, all 3 objects A, B, C point to the same pixel matrix. 
+3. using the copy constructor () / list intialization {} / assigment = will only copy header. i.e. in the below code, all 3 objects A, B, C point to the same pixel matrix. 
 
 ```cpp
 Mat A, C;
