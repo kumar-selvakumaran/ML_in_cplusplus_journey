@@ -65,8 +65,6 @@ reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_i
 - ***CIE L\*a\*b\**** is a perceptually uniform color space, which comes in handy if you need to measure the distance of a given color to another color.
 
 </details>
-___
-
 
 <details>
 <summary style="font-size:2.35vw"> <b>setting up IP CAM from integrated web-cam : to use webcam with opencv c++ in a docker image hosted on WSL</b></summary>
