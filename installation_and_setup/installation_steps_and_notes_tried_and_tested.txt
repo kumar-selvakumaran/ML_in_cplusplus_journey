@@ -40,3 +40,11 @@ ___________ OPENCV FINAL WORKING _________________
 4. WORKING IMAGE :  https://firstcaptain.github.io/opencv-docker/
 __________________________________________________
 __________________________________________________
+
+CONNECNTING WEBCAMERA TO DOKCER CONTAINER
+
+STEP 1 : MAKE IP CAMERA : https://www.youtube.com/watch?v=zd012EHvsIg
+CHANGES TO MAKE WHILE FOLLOWING TUTORIAL.
+1) use http instead of rtsp
+2) use (mov)MP4 INSTEAD OF MPEG
+
