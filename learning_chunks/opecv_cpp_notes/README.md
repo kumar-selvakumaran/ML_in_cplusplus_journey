@@ -51,6 +51,16 @@ cout << "\nmatrix chunk : \n" << format(vizslice, Formatter::FMT_NUMPY ) <<"\n";
 ```
 ![Alt text](image-20.png)
 
+indexing element by element : 
+```cpp
+//  OUTPUT 1
+Mat procChannels[3];
+split(frame, procChannels);
+//r = row index, c = col index, ch = channel
+static_cast<int>(procChannels[ch].at<uchar>(r,c))
+```
+
+
 5. ii) to **slice** Mat
 
 ```cpp
