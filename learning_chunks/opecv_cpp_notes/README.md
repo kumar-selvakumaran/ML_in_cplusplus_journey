@@ -141,3 +141,26 @@ string vidPath = "http://<ip address>:8080/<some name>";
 inputVideo = new VideoCapture(vidPath);
 ```
 </details>
+
+<details>
+<summary style="font-size:2.35vw"> <b>difference between a = &b, and *a = b, (using cv::mat)</b></summary>
+reference : <a href="https://stackoverflow.com/a/13017187">discusssion forum</a>
+
+<code> a = &b; </code>  the address of 'b' is assigned to 'a'. That means the values pointed to by the initial address of 'a', is now pointed to by the adderess of 'b'. 
+
+```cpp
+Mat a = Mat(1,3,CV_8U, Scalar(1));
+Mat b = Mat(1,5,CV_8U, Scalar(0));
+Mat* aptr = &a;
+Mat* bptr = &b;
+```
+
+
+![Alt text](image-4.png)
+
+
+![Alt text](image-14.png)
+
+
+</details>
+
