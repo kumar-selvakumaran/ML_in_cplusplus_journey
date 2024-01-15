@@ -4,6 +4,9 @@
 <summary style="font-size:2.35vw"> <b>cv::Mat : background, slicing, display : </b></summary>
 reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_image_container.html">cv::Mat tutorial docs</a> 
 
+reference : <a href="https://docs.opencv.org/2.4/modules/core/doc/basic_structures.html#vec">cv::Mat tutorial docs (older)</a> 
+
+
 1. Mat is the object used for storing images as arrays.
 
 2. cv::MAT object consists of a header containing matrix details like matrix dimention details, storing method, pixel value array address.
@@ -172,3 +175,7 @@ a's value is now the address if b. therefore:
 
 </details>
 
+<details>
+<summary style="font-size:2.35vw">Understanding passing by address.</summary>
+when passed as address, although the addresses of actual parameters are copied to formal parameters, if the the formal parameter's values (these are pointers) are reassigned to point to a different address, the change WONT reflect in the actual parameters. DONT COUNT ON IT AGAIN.
+</details>
