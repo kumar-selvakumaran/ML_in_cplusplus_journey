@@ -28,8 +28,30 @@ Mat G;
 A.copyTo(G);
 ```
 
+5. i) indexing a matrix, Vec3b is to read a 3channel point vector
+```cpp
+//  OUTPUT 1
+int r = 140, c = 140, ch = 0; 
+cout <<"\n\nOUTPUT 1\n\n";
+for(; r < 145; r++)
+{
+    cout << "[";
+    for(; c < 145; c++)
+    {
+        cout<<frame.at<Vec3b>(r,c) << ", ";
+    }
+    c = 140;
+    cout << "],\n";
+}
 
-5. to **slice** Mat
+//  OUTPUT 2
+cout <<"\n\nOUTPUT 2\n";
+Mat vizslice(frame(Range(140,145) , Range(140,145)));
+cout << "\nmatrix chunk : \n" << format(vizslice, Formatter::FMT_NUMPY ) <<"\n"; 
+```
+![Alt text](image-20.png)
+
+5. ii) to **slice** Mat
 
 ```cpp
 Mat frame;
