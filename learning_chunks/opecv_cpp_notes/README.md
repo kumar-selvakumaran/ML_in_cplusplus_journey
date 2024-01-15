@@ -202,7 +202,7 @@ a's value is now the address if b. therefore:
 
 - when passed as address, although the addresses of actual parameters are copied to formal parameters, if the the formal parameter's values (these are pointers) are reassigned to point to a different address, the change WONT reflect in the actual parameters. DONT COUNT ON IT AGAIN.
 
-- Also, hesitate to pass <code>cv::Mat</code> by value, by doing so you are NOT passing the pixel value array, but just a class object that contains some details about the matrix, and the pointer to it, as mentioned above. Moreover, the size of mat is about the same for any Mat intance. For instance:
+- Also, DONT hesitate to pass <code>cv::Mat</code> by value, by doing so you are NOT passing the pixel value array, but just a class object that contains some details about the array, and the pointer to it, as mentioned above. Moreover, the size of mat is about the same for any Mat intance. For instance:
 
 ```cpp
 *inputVideo >> frame;
