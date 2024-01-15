@@ -53,7 +53,6 @@ cout << "\nmatrix chunk : \n" << format(vizslice, Formatter::FMT_NUMPY ) <<"\n";
 
 indexing element by element : 
 ```cpp
-//  OUTPUT 1
 Mat procChannels[3];
 split(frame, procChannels);
 //r = row index, c = col index, ch = channel
