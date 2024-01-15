@@ -199,5 +199,16 @@ a's value is now the address if b. therefore:
 
 <details>
 <summary style="font-size:2.35vw">Understanding passing by address.</summary>
-when passed as address, although the addresses of actual parameters are copied to formal parameters, if the the formal parameter's values (these are pointers) are reassigned to point to a different address, the change WONT reflect in the actual parameters. DONT COUNT ON IT AGAIN.
+
+- when passed as address, although the addresses of actual parameters are copied to formal parameters, if the the formal parameter's values (these are pointers) are reassigned to point to a different address, the change WONT reflect in the actual parameters. DONT COUNT ON IT AGAIN.
+
+- Also, hesitate to pass <code>cv::Mat</code> by value, by doing so you are NOT passing the pixel value array, but just a class object that contains some details about the matrix, and the pointer to it, as mentioned above. Moreover, the size of mat is about the same for any Mat intance. For instance:
+
+```cpp
+*inputVideo >> frame;
+Mat gblurr = Mat(5, 5, CV_32F, data);
+cout << "\n\nfilter : dimentions : " << gblurr.size() << " object size : "<< sizeof(gblurr);
+cout << "\nframe : dimentions : "<< frame.size() << " object size : " << sizeof(frame) << "\n\n"; 
+```
+![Alt text](image-19.png)
 </details>
