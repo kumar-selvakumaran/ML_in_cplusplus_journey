@@ -149,17 +149,16 @@ reference : <a href="https://stackoverflow.com/a/13017187">discusssion forum</a>
 <code> a = &b; </code>  the address of 'b' is assigned to 'a'. That means the values pointed to by the initial address of 'a', is now pointed to by the adderess of 'b'. 
 
 ```cpp
-Mat a = Mat(1,3,CV_8U, Scalar(1));
-Mat b = Mat(1,5,CV_8U, Scalar(0));
-Mat* aptr = &a;
-Mat* bptr = &b;
+    Mat a = Mat(1,3,CV_8U, Scalar(1));
+    Mat b = Mat(1,5,CV_8U, Scalar(0));
+    Mat* aptr = &a;
+    Mat* bptr = &b;
 ```
 
 
 ![Alt text](image-4.png)
 
-
-![Alt text](image-14.png)
+![Alt text](image-16.png)
 
 
 </details>
