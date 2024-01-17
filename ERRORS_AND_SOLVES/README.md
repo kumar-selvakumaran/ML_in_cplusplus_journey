@@ -53,7 +53,7 @@ Try all possible combinations if youre bugged out, i.e a.t x b, a x b.t , a x b 
 It is due to mentioning the dimentions dont allign , when trying to make assignments to matrices with other matrices
 ```cpp
 cout << "\n\n\n" << procChannels[ch].size() << " " << procChannels[ch].type() << "  .copyTo( " << outChannels[ch](roi).size() << " " << outChannels[ch](roi).type();
-procChannels[ch].copyTo(outChannels[ch](roi));
+    procChannels[ch].copyTo(outChannels[ch](roi));
 ```
 ![Alt text](./images/image-4.png)
 </details>
