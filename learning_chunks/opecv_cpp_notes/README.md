@@ -99,6 +99,7 @@ reference : <a href="https://gist.github.com/yangcha/38f2fa630e223a8546f9b48ebbb
 |CV_32F| 5|	13|	21|	29
 |CV_64F| 6|	14|	22|	30
 
+9. \* operator does matrix multiplication not element wise.
 <br>
 </details>
 
