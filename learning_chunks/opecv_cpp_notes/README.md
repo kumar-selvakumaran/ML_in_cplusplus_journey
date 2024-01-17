@@ -49,7 +49,7 @@ cout <<"\n\nOUTPUT 2\n";
 Mat vizslice(frame(Range(140,145) , Range(140,145)));
 cout << "\nmatrix chunk : \n" << format(vizslice, Formatter::FMT_NUMPY ) <<"\n"; 
 ```
-![Alt text](image-20.png)
+![Alt text](./images/image-20.png)
 
 indexing element by element : 
 ```cpp
@@ -67,7 +67,7 @@ Mat frame;
 *inputVideo >> frame;
 Mat slice{frame(Range(140,145) , Range(140,145))};
 ```
-![Alt text](image.png)
+![Alt text](./images/image.png)
 (c*ch) * r ?
 
 
@@ -84,7 +84,7 @@ randu(R, Scalar::all(0), Scalar::all(255));
 Mat slice{frame(Range(140,145) , Range(140,145))};
 cout << "\nmatrix chunk : \n" << format(slice Formatter::FMT_NUMPY ) <<"\n";
 ```
-![Alt text](image-1.png)
+![Alt text](./images/image-1.png)
 
 8. A Mapping of Type to Numbers in OpenCV
 reference : <a href="https://gist.github.com/yangcha/38f2fa630e223a8546f9b48ebbb3e61a">Mat types</a>
@@ -126,26 +126,26 @@ reference : <a href="https://www.youtube.com/watch?v=zd012EHvsIg">ip cam using V
 4. click "advanced options" button in the same step and "tick" the device properties checkbox
 5. click on the scroll down attached to the "stream" button, and click "stream"
 
-![Alt text](image-2.png)
+![Alt text](./images/image-2.png)
 6. at the source setting window, click next.
 7. open the file scroll down and click **http** (change 1), 
 8. click add, and type in the some name (referred to as \<some name\> from now on.), this will be part of the url.
 
- ![Alt text](image-3.png)
+ ![Alt text](./images/image-3.png)
 
 9. select "video - H.264 + MP3 (MP4)" 
 
-![Alt text](image-5.png)
+![Alt text](./images/image-5.png)
 
 10. select **MP4/MOV** change(2)
 
-![Alt text](image-6.png)
+![Alt text](./images/image-6.png)
 
 11. click the "spanner" icon next to the previously set dropdown, go to each of the tabs in the configuration window, and apply settings as below : 
 
-![Alt text](image-7.png)
+![Alt text](./images/image-7.png)
 
-![Alt text](image-8.png)
+![Alt text](./images/image-8.png)
 
 nothing needed for subtitles , because we dont have any
 
@@ -153,34 +153,34 @@ nothing needed for subtitles , because we dont have any
 
 13. from the generated output string, copy the highlighted part. This part will be part of the stream's URL
 
-![Alt text](image-9.png)
+![Alt text](./images/image-9.png)
 
 14. click stream
 
 15. a new window wil openup with video properties, click default, in both "Video Proc Amp" tab, and "Camera Control" tab.
 
-![Alt text](image-10.png)
+![Alt text](./images/image-10.png)
 
 16. click next / apply + ok
 
-![Alt text](image-11.png)
+![Alt text](./images/image-11.png)
 
 17. click apply + OK
 
 17. the audio properties tab will open, click apply + OK in this tab as well.
 
-![Alt text](image-12.png)
+![Alt text](./images/image-12.png)
 
 18. check the vlc media player's window. the stream should have started :
 
-![Alt text](image-13.png)
+![Alt text](./images/image-13.png)
 
 
 19. find your ip address using the "ipconfig /all" command in cmd
 
 20. search for this part of the output, and look under **IPv4 Address** for your IP address, which will be in the following format : xx.xxx.xxx.xx
 
-![Alt text](image-15.png)
+![Alt text](./images/image-15.png)
 
 21. your final ip camera url will be "http://\<ip address\>:8080/\<some name\>", (reffer previous steps for what \<some name\> is.)
 
@@ -211,14 +211,14 @@ a's value is now the address if b. therefore:
 - so both aptr, and btr points to b,
 - a remains untouched.
 
-![Alt text](image-18.png)
+![Alt text](./images/image-18.png)
 
 <code>*aptr = b;</code>
 - a should be overwritten by b, because initially *aptr = a
 - aptr AKA late a's address, should now point to a copy of b.
 -  bptr wasnt touched, so bptr will remain pointing to the original b .
 
-![Alt text](image-17.png)
+![Alt text](./images/image-17.png)
 
 </details>
 
@@ -235,5 +235,5 @@ Mat gblurr = Mat(5, 5, CV_32F, data);
 cout << "\n\nfilter : dimentions : " << gblurr.size() << " object size : "<< sizeof(gblurr);
 cout << "\nframe : dimentions : "<< frame.size() << " object size : " << sizeof(frame) << "\n\n"; 
 ```
-![Alt text](image-19.png)
+![Alt text](./images/image-19.png)
 </details>
