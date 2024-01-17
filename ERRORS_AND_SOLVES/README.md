@@ -43,3 +43,17 @@ according to the table, the operations are supported only for 1 channel and 2 ch
 The Definition of a Mat <code>Mat testmat = Mat(1, 5, CV_32FC1, Scalar(2));</code> is done as (rows, columns, type, value), but the <code>Mat.size()</code> function returns dims as [columns x rows], which causes a lot of confusion. check how the shape of the matrices look when they are multiplied, in the below image. 
 
 Try all possible combinations if youre bugged out, i.e a.t x b, a x b.t , a x b , a.t x b.t , and similarly for b'' first and 'a' second 
+
+</details>
+<details><summary> dim mismatch while slice-assigning arrays.
+
+![Alt text](./images/image-3.png)
+</summary>
+
+It is due to mentioning the dimentions dont allign , when trying to make assignments to matrices with other matrices
+```cpp
+cout << "\n\n\n" << procChannels[ch].size() << " " << procChannels[ch].type() << "  .copyTo( " << outChannels[ch](roi).size() << " " << outChannels[ch](roi).type();
+procChannels[ch].copyTo(outChannels[ch](roi));
+```
+![Alt text](./images/image-4.png)
+</details>
