@@ -1,7 +1,7 @@
 # opencv notes:
 
 <details>
-<summary style="font-size:2.35vw"> <b>cv::Mat : background, slicing, display : </b></summary>
+<summary style="font-size:2.35vw"> cv::Mat : background, slicing, display : </summary>
 reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_image_container.html">cv::Mat tutorial docs</a> 
 
 reference : <a href="https://docs.opencv.org/2.4/modules/core/doc/basic_structures.html#vec">cv::Mat tutorial docs (older)</a> 
@@ -81,7 +81,7 @@ randu(R, Scalar::all(0), Scalar::all(255));
 7. <details><summary> Assignment of rows/columns and slices : 
 
 <a href="https://docs.opencv.org/2.4/modules/core/doc/basic_structures.html#vec">extensive Mat tutorial </a>
- 
+
 rows/ cols: 
 
 ```cpp
@@ -133,7 +133,7 @@ reference : <a href="https://gist.github.com/yangcha/38f2fa630e223a8546f9b48ebbb
 
 
 <details>
-<summary style="font-size:2.35vw"> <b>color spaces and applications : </b></summary>
+<summary style="font-size:2.35vw"> color spaces and applications : </summary>
 
 reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_image_container.html">cv::Mat tutorial docs</a> 
 
@@ -145,7 +145,7 @@ reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_i
 </details>
 
 <details>
-<summary style="font-size:2.35vw"> <b>setting up IP CAM from integrated web-cam : to use webcam with opencv c++ in a docker image hosted on WSL</b></summary>
+<summary style="font-size:2.35vw"> setting up IP CAM from integrated web-cam : to use webcam with opencv c++ in a docker image hosted on WSL</summary>
 reference : <a href="https://www.youtube.com/watch?v=zd012EHvsIg">ip cam using VLC media player</a>
 
 1. open vlc media player
@@ -221,7 +221,7 @@ inputVideo = new VideoCapture(vidPath);
 </details>
 
 <details>
-<summary style="font-size:2.35vw"> <b>difference between a = &b, and *a = b, (using cv::mat)</b></summary>
+<summary style="font-size:2.35vw"> difference between a = &b, and *a = b, (using cv::mat)</summary>
 reference : <a href="https://stackoverflow.com/a/13017187">discusssion forum</a>
 
 ```cpp
@@ -282,3 +282,33 @@ cout << format(prodtest, Formatter::FMT_NUMPY);
 ```
 
 ![Alt text](./images/image-21.png)
+
+</details>
+
+<details><summary> N-D Mats, initialization and assignment </summary>
+
+<a href="https://forum.opencv.org/t/slicing-operation-help/13355/7"> Reference resource link </a>
+
+relevant classes and functions : 
+- <a href="https://docs.opencv.org/4.x/d3/d63/classcv_1_1Mat.html#ad543b6bd296ae1247032c750af4718e1">operator()()</a>
+
+- <a href="https://docs.opencv.org/4.x/d3/d63/classcv_1_1Mat.html#a40b5b3371a9c2a4b2b8ce0c8068d7c96">locateROI()</a>
+
+code sample : 
+
+```cpp
+const int sz[] = {3,8,8,5}; // slightly smaller for viz.
+cv::Mat input_array(4,sz,CV_32F,cv::Scalar(1.0));
+std::vector<cv::Range> ranges;
+  ranges.push_back(cv::Range::all());
+  ranges.push_back(cv::Range::all());
+  ranges.push_back(cv::Range::all());
+  ranges.push_back(cv::Range(0, 2));
+
+cv::Mat subarray = input_array(ranges);
+cout << subarray.size << endl;
+subarray = subarray * 2; // some op
+cout << Mat(8,8,CV_32F,input_array.ptr(0));
+```
+
+![Alt text](./images/image-22.png)
