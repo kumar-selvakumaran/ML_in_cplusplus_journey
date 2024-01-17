@@ -311,4 +311,22 @@ subarray = subarray * 2; // some op
 cout << Mat(8,8,CV_32F,input_array.ptr(0));
 ```
 
+
+
+
 ![Alt text](./images/image-22.png)
+
+
+```cpp
+cv::Mat largeMat = cv::Mat::zeros(500, 500, CV_8UC3);
+
+cv::Mat smallMat = cv::Mat::zeros(100, 100, CV_8UC3);
+
+smallMat.setTo(cv::Scalar(255, 0, 0)); // Blue 
+
+cv::Rect roi(200, 200, smallMat.cols, smallMat.rows);
+
+smallMat.copyTo(largeMat(roi));
+```
+
+![Alt text](./images/image-23.png)
