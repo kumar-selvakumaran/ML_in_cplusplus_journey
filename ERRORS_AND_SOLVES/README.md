@@ -32,3 +32,14 @@
 |CV_64F| 6|	14|	22|	30
 
 according to the table, the operations are supported only for 1 channel and 2 channel operations for Floats, since matrices are 3 channels, we cant do a lot of such operations for image matrices directly, We will have to do it channel wise.
+</details>
+
+<details><summary> shape mismatch errors. variations of : 
+
+![Alt text](./images/image-1.png)
+![Alt text](./images/image-2.png)
+</summary>
+
+The Definition of a Mat <code>Mat testmat = Mat(1, 5, CV_32FC1, Scalar(2));</code> is done as (rows, columns, type, value), but the <code>Mat.size()</code> function returns dims as [columns x rows], which causes a lot of confusion. check how the shape of the matrices look when they are multiplied, in the below image. 
+
+Try all possible combinations if youre bugged out, i.e a.t x b, a x b.t , a x b , a.t x b.t , and similarly for b'' first and 'a' second 

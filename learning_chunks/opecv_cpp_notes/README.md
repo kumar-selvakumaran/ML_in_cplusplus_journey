@@ -237,3 +237,20 @@ cout << "\nframe : dimentions : "<< frame.size() << " object size : " << sizeof(
 ```
 ![Alt text](./images/image-19.png)
 </details>
+
+<details><summary> Confusion between shape representation and definition, which are rows and which are columns? </summary>
+
+The Definition of a Mat <code>Mat testmat = Mat(1, 5, CV_32FC1, Scalar(2));</code> is done as (rows, columns, type, value), but the <code>Mat.size()</code> function returns dims as [columns x rows], which causes a lot of confusion. check how the shape of the matrices look when they are multiplied, in the below image. 
+
+```cpp
+gblurr1dCh = Mat(1, 5, CV_32FC1, Scalar(2));
+colSlice = Mat(640, 5, CV_32FC1, Scalar(3));
+
+cout << "\n\n\nvisualizing shape in order of multiplication : "<< gblurr1dCh.size() <<" * "<<colSlice.t().size()<<"\n\n\n";
+
+Mat prodtest =  gblurr1dCh * colSlice.t(); 
+
+cout << format(prodtest, Formatter::FMT_NUMPY);
+```
+
+![Alt text](./images/image-21.png)
