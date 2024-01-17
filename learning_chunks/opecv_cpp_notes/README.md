@@ -78,7 +78,35 @@ Mat R = Mat(3, 2, CV_8UC3);
 randu(R, Scalar::all(0), Scalar::all(255));
 ```
 
-7. formatting Mat dislay in cout :  <code>format(mat_name, Formatter::FMT_PYTHON)</code>
+7. <details><summary> Assignment of rows/columns and slices : 
+
+<a href="https://docs.opencv.org/2.4/modules/core/doc/basic_structures.html#vec">extensive Mat tutorial </a>
+ 
+rows/ cols: 
+
+```cpp
+// add the 5-th row, multiplied by 3 to the 3rd row
+M.row(3) = M.row(3) + M.row(5)*3;
+
+// now copy the 7-th column to the 1-st column
+// M.col(1) = M.col(7); // this will not work
+Mat M1 = M.col(1);
+M.col(7).copyTo(M1);
+```
+slices:
+```cpp
+// create a new 320x240 image
+Mat img(Size(320,240),CV_8UC3);
+// select a ROI
+Mat roi(img, Rect(10,10,100,100));
+// fill the ROI with (0,255,0) (which is green in RGB space);
+// the original 320x240 image will be modified
+roi = Scalar(0,255,0);
+```
+
+
+
+8. formatting Mat dislay in cout :  <code>format(mat_name, Formatter::FMT_PYTHON)</code>
 
 ```cpp
 Mat slice{frame(Range(140,145) , Range(140,145))};
@@ -86,7 +114,7 @@ cout << "\nmatrix chunk : \n" << format(slice Formatter::FMT_NUMPY ) <<"\n";
 ```
 ![Alt text](./images/image-1.png)
 
-8. A Mapping of Type to Numbers in OpenCV
+9. A Mapping of Type to Numbers in OpenCV
 reference : <a href="https://gist.github.com/yangcha/38f2fa630e223a8546f9b48ebbb3e61a">Mat types</a>
 
 | | C1 | C2 | C3 | C4
@@ -99,7 +127,7 @@ reference : <a href="https://gist.github.com/yangcha/38f2fa630e223a8546f9b48ebbb
 |CV_32F| 5|	13|	21|	29
 |CV_64F| 6|	14|	22|	30
 
-9. \* operator does matrix multiplication not element wise.
+10. \* operator does matrix multiplication not element wise.
 <br>
 </details>
 
