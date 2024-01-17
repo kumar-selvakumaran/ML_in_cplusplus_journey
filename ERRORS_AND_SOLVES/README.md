@@ -7,7 +7,7 @@
 
 
 <details><summary>error while loading shared libraries: libopencv_gapi.so.4.2: cannot open shared object file: No such file or directory.</summary>
-**SOLVE** : although no indication, installing boost solves the problem (dependency issue): apt-get install -y scons libboost-all-dev  </details>
+**SOLVE** : although no indication, installing boost solves the problem (dependency issue): apt-get install -y libboost-all-dev  </details>
 
 <details><summary>
 
