@@ -146,8 +146,24 @@ reference : <a href="https://docs.opencv.org/4.x/d6/d6d/tutorial_mat_the_basic_i
 
 </details>
 
+<details><summary>LATEST WORKING http streaming of webcam output for opencv live video inference </summary>
+
+- Go to the installation and setup repository, and find the coressponding folder.
+- create conda env, configure what ever is needed by that subfolder.
+- run main.py
+- copy past <code> http://10.110.115.50:5000/ </code> in the browser or whatever looks like that from the output of main.py
+- when the page opens, click open image in new tab.
+- <code> http://10.110.115.50:5000/video_feed </code> the url for the feed should look something like this. use this as source for your 
+
+```cpp
+VID = "http://10.110.115.50:5000/video_feed"
+cv::VideoCapture inputvideo(VID);
+Mat frame;
+*inputvideo >> frame
+```
+</details>
 <details>
-<summary style="font-size:2.35vw"> setting up IP CAM from integrated web-cam : to use webcam with opencv c++ in a docker image hosted on WSL</summary>
+<summary style="font-size:2.35vw">NOT WORKING ANYMORE setting up IP CAM from integrated web-cam : to use webcam with opencv c++ in a docker image hosted on WSL</summary>
 reference : <a href="https://www.youtube.com/watch?v=zd012EHvsIg">ip cam using VLC media player</a>
 
 1. open vlc media player
