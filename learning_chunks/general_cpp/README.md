@@ -56,6 +56,15 @@ int main(int argc, char *argv[]) {
 
     return(0);
 }
-    ```
+```
 
+</details>
+
+<details>
+    <summary>
+    defining reusable classes
+    </summary>
+Most often, classes are defined in header files of the same name as the class, and any member functions defined outside of the class are put in a . cpp file of the same name as the class  
+
+<a href="https://www.learncpp.com/cpp-tutorial/classes-and-header-files/">learncpp discusses this</a>
 </details>
