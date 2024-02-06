@@ -57,3 +57,13 @@ cout << "\n\n\n" << procChannels[ch].size() << " " << procChannels[ch].type() <<
 ```
 ![Alt text](./images/image-4.png)
 </details>
+
+<details>
+<summary>undefined reference to `euclideanDistance(cv::Mat&, cv::Mat&)' (some function or class or whatever)
+collect2: error: ld returned 1 exit status<br>
+
+![Alt text](./images/image-5.png)</summary>
+<br>
+You probably didnt add the relavent complimentary cpp files for compiation in the ''' g++ ... ''' command in the Makefile. <b> If you are using the function from some other cpp file, add those files as well in g++ command in the makefile</b>
+<br>
+</details>
