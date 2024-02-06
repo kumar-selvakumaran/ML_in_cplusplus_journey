@@ -67,3 +67,5 @@ collect2: error: ld returned 1 exit status<br>
 You probably didnt add the relavent complimentary cpp files for compiation in the ''' g++ ... ''' command in the Makefile. <b> If you are using the function from some other cpp file, add those files as well in g++ command in the makefile</b>
 <br>
 </details>
+
+- using CV_16F with pow gives segmentation fault, CV_16F dosent exist, chatgpt used it, beware.
