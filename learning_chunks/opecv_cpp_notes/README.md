@@ -348,3 +348,7 @@ smallMat.copyTo(largeMat(roi));
 ```
 
 ![Alt text](./images/image-23.png)
+
+</details>
+
+- cv::sum() returns the sum channel by channel, 0 if the channel is not present, (4 channels no matter what?)

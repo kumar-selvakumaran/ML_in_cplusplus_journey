@@ -76,3 +76,5 @@ You probably didnt add the relavent complimentary cpp files for compiation in th
 <b> ALL TEMPLATE CLASSES/FUNCTIONS MUST BE DEFINED IN THE HEADER </b><br>
 refer this <a href="https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl"> template functions/classes declaration/definition in headers.</a>
 </details>
+
+- squareroot of -ve values gives -nan 
