@@ -352,3 +352,7 @@ smallMat.copyTo(largeMat(roi));
 </details>
 
 - cv::sum() returns the sum channel by channel, 0 if the channel is not present, (4 channels no matter what?)
+
+<details>
+<summary> when using cv::Mat as values for std::map, all the values are getting overwritten. dosent happen with vectors, or integers</summary>
+</details>
