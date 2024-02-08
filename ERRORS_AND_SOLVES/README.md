@@ -74,11 +74,11 @@ You probably didnt add the relavent complimentary cpp files for compiation in th
 <summary> <b>Undefinened reference </b>to (some template related stuff function/class) </summary>
 <br>
 <b> ALL TEMPLATE CLASSES/FUNCTIONS MUST BE DEFINED IN THE HEADER </b><br>
-refer this <a href="https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl"> template functions/classes declaration/definition in headers.</a>
+refer this <a href="https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl"> template functions/classes declaration/definition in headers.</a><br><br>
 </details>
-
+<br>
 - squareroot of -ve values gives -nan 
-
+<br><br>
 <details>
 <summary> Not an ERROR but, unexpected behaviour, read docs. <br> intialize 64F mats with double arrays, and 32F mats with float arrays</summary>
 
