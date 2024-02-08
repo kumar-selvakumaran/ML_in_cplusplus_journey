@@ -78,3 +78,29 @@ refer this <a href="https://isocpp.org/wiki/faq/templates#templates-defn-vs-decl
 </details>
 
 - squareroot of -ve values gives -nan 
+
+<details>
+<summary> Not an ERROR but, unexpected behaviour, read docs. <br> intialize 64F mats with double arrays, and 32F mats with float arrays</summary>
+
+```cpp
+float a[5] = {1, 1,  1, 1, 1};
+double b[5] = {3, 2, 0, 4, 8};
+
+cv::Mat temp1 = cv::Mat(1, 5, CV_32FC1, a);
+cv::Mat temp2 = cv::Mat(1, 5, CV_64FC1, a);
+cv::Mat temp3 = cv::Mat(1, 5, CV_32FC1, b);
+cv::Mat temp4 = cv::Mat(1, 5, CV_64FC1, b);
+
+std::cout << "\ntemp 1 :\t";
+printmat(temp1, 8);
+std::cout << "\ntemp 2 :\t";
+printmat(temp2, 8);
+std::cout << "\ntemp 3 :\t";
+printmat(temp3, 8);
+std::cout << "\ntemp 4 :\t";
+printmat(temp4, 8);
+```
+
+![Alt text](./images/image-6.png)
+
+</details>
