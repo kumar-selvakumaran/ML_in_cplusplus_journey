@@ -305,6 +305,8 @@ cout << format(prodtest, Formatter::FMT_NUMPY);
 
 <details><summary> N-D Mats, initialization and assignment </summary>
 
+<a href="https://docs.opencv.org/4.x/d3/d63/classcv_1_1Mat.html#aa90cea495029c7d1ee0a41361ccecdf3">accessing nd arrays using pointers as a long 1d array;</a>
+
 <a href="https://forum.opencv.org/t/slicing-operation-help/13355/7"> Reference resource link </a>
 
 relevant classes and functions : 
@@ -350,9 +352,25 @@ smallMat.copyTo(largeMat(roi));
 ![Alt text](./images/image-23.png)
 
 </details>
+<br>
 
 - cv::sum() returns the sum channel by channel, 0 if the channel is not present, (4 channels no matter what?)
 
+<br>
+
 -  when using cv::Mat as values for std::map, all the values are getting overwritten. dosent happen with vectors, or integers
 
-- 
+<br>
+
+<details>
+<summary><b>use explicit constructors</b> while initializing objects. Using assignment during definition can lead to unpredictable behaviour.
+</summary>
+
+```cpp
+cv::Mat::zeros a(2,2,CV_64F);
+cv::Mat b(a); // this is correct.
+cv::Mat c = a; // wrong
+```
+
+high level objects use pointers and have a comple structure underneath, which is not meant to be initialized with assignment.
+
