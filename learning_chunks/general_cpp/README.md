@@ -69,3 +69,16 @@ Most often, classes are defined in header files of the same name as the class, a
 <a href="https://www.learncpp.com/cpp-tutorial/classes-and-header-files/">learncpp discusses this</a>
 </details>
 
+<details>
+    <summary>
+    path not found (package not found) (vscode)
+    </summary>
+
+- check in <code>/usr/include</code> or <code>/usr/local/</code>
+- if you cant find it, uninstall, reinstall, and look install/build logs for the exact package name / path to the package.
+- once you find the package do a <code>dpkg -L '''package path'''</code>
+- you can find a director where this particular package, and possibly other packages will be there. Add the inner most common directory to  <code>c_cpp_properties.json</code>
+![alt text](imgs/image-1.png) 
+
+</details>
+
