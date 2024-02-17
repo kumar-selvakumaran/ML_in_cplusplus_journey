@@ -82,3 +82,10 @@ Most often, classes are defined in header files of the same name as the class, a
 
 </details>
 
+<details>
+<summary>
+DO NOT LEAVE HEADERS BLANK. you will get Crazy linkage errors in inbuilt packages.
+</summary>
+
+![alt text](imgs/image-2.png)
+</details>
