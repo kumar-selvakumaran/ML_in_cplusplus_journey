@@ -361,16 +361,3 @@ smallMat.copyTo(largeMat(roi));
 -  when using cv::Mat as values for std::map, all the values are getting overwritten. dosent happen with vectors, or integers
 
 <br>
-
-<details>
-<summary><b>use explicit constructors</b> while initializing objects. Using assignment during definition can lead to unpredictable behaviour.
-</summary>
-
-```cpp
-cv::Mat::zeros a(2,2,CV_64F);
-cv::Mat b(a); // this is correct.
-cv::Mat c = a; // wrong
-```
-
-high level objects use pointers and have a comple structure underneath, which is not meant to be initialized with assignment.
-
