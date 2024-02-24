@@ -361,3 +361,24 @@ smallMat.copyTo(largeMat(roi));
 -  when using cv::Mat as values for std::map, all the values are getting overwritten. dosent happen with vectors, or integers
 
 <br>
+
+<details>
+<summary>
+row/ column assignment
+</summary>
+
+```cpp
+cv::Mat a(cv::Size(10, 10), CV_64FC1, cv::Scalar(1));
+cv::Mar ac(cv::Size(10, 1), CV_64FC1, cv::Scalar(5));
+cv::Mat ar(cv::Size(1, 10), CV_64FC1, cv::Scalar(7));
+
+ac.copyTo(a.col(0));
+ar.copyTo(a.row(2));
+
+printmat(a, INT_MAX);
+
+```
+
+![alt text](./images/image-24.png)
+
+</details>
