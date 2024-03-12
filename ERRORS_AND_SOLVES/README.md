@@ -104,3 +104,46 @@ printmat(temp4, 8);
 ![Alt text](./images/image-6.png)
 
 </details>
+
+<details>
+<summary>
+<b>UNEXPECTED BEHAVIOUR</b> assigning 1 object with another object</summary>
+
+```cpp
+std::vector<double> a(10,0);
+tempMat = cv::Mat(a) //UNEXPECTED BEHAVIOUR. A MIGHT DIE BEFORE tempMat WHICH WILL FILL tempMat with junk, BE VERY CAREFULE
+```
+In the above example, a mat is initialized using a vector. The mat can exhibit UNEXPECTED BEHAVIOUR in the following scenarios: <br><br>
+if 'a' goes out of scope before tempMat does. <br><br>eg : if the assignment is done inside an if-block-scope where 'a' was declared, then 'a' will die when the if-block-scope and tempMat will exhibit UNEXPECTED BEHAVIOUR if accessed after the if-block-scope ends.<br><br>
+
+A less obvious situation is if tempMat was passed to a function as a reference, for alteration. like so 
+
+```cpp
+void changeMat(cv::Mat &tempMat){
+  std::vector<float> a(10, 0.0f);
+  tempMat = cv::Mat(a);
+}
+
+int main(){
+  cv::Mat temp{};
+  changeMat(temp);
+  printf("unexpected behaviour %f", temp.at<double>(0)); // you never know what the value of temp[0] will be due to UNEXPECTED BEHAVIOUR
+}
+```
+
+when i came across this behaviour, the first row of the mat alone was filled with junk, when printed out of scope. Inside the scope , it matched the vector's values.
+
+<b> SOLUTION </b><br><br>
+
+```cpp
+void changeMat(cv::Mat &tempMat){
+  std::vector<float> a(10, 0.0f);
+  cv::Mat(a).copyTo(tempMat) // copyTo copies the values only, does not deal with the assignee's adress.
+}
+
+int main(){
+  cv::Mat temp{};
+  changeMat(temp);
+  printf("unexpected behaviour %f", temp.at<double>(0)); // you never know what the value of temp[0] will be due to UNEXPECTED BEHAVIOUR
+}
+```
