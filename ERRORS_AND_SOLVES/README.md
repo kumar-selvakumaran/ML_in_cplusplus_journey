@@ -147,3 +147,7 @@ int main(){
   printf("unexpected behaviour %f", temp.at<double>(0)); // you never know what the value of temp[0] will be due to UNEXPECTED BEHAVIOUR
 }
 ```
+<b> MAKE SURE YOU ASSIGN VALUES, AND NOT REFERENCE/POINTERS.
+</details>
+
+
