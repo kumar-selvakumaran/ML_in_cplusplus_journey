@@ -1,0 +1,97 @@
+<html>
+<title>
+    SETUP : headers "linking" and more.
+</title>
+
+<head>
+    my experience stumbling around and trying to install OpenGL and getting it to work
+</head>
+
+<body>
+    <ul>
+        <li>
+            So, I was trying to install OpenGl, and I couldnt get it to run initially. i was getting the following error. <br><br>
+            <code> opengltest.cpp:5:10: fatal error: GL/glut.h: No such file or directory
+            #include <GL/glut.h>  // GLUT, includes glu.h and gl.h</code> <br>
+            <br>
+            So, I tried finding the packages, and seeing why this happening and in the process i learned to following things.
+            <ul>
+                <li>
+                    Before this i got opencv to work, and 1 differnce i saw in opencv is that it its 
+                    files were stored in a differnt location namely : <code> /usr/local/include </code> , 
+                    where a lot of other packages including OpenGL were stored in <code> /usr/include </code>, 
+                    in fact, previously when i tried installing boost as well, it was stored in 
+                    <code> /user/include </code>.
+                </li>
+    
+                <li>
+                    So i was going through the OpenCV4 directory , where the packages were accessed,
+                    and found all the header files in <code> /usr/local/include/opencv4/opencv2/</code>
+                    <br><br>
+                    <img src="imgs/opencv_packages.jpg" style="width: 900px; height: 200px;">
+                    <br><br> 
+                </li>
+
+                <li>
+                    Similarly, I found OpenGL's packages in  <code>/usr/include/GL/</code> which ar as follows:<br><br>
+                    <img src="imgs/opengl_packages.jpg" style="width: 900px; height: 60px;">
+                </li>
+                
+                <li>
+                    We need to compile these packages along with our own cpp files, and hence we need to "link"
+                    these package header, and the path to the folders where these package headers and files are
+                    present is included in the compilation command.
+                </li>
+
+                <li>
+                    Before that, I am not sure about this but we may need to add the package location in 
+                    C_CPP_properties.json of vscode as well. So that it is it can trace the source, and wont show errors
+                    <br><br>
+                    <bold>Note : </bold> This step is <i>probably</i> not for the compilation / linking process.
+                </li>
+                <br><br>
+                <li>
+                    To include this these package locations in the compilation command, certain tools like "pkg-config"
+                    are used. for example, a working compilation command includes the opencv files by callin "pkg-config"
+                    like so:
+                    <br>
+                    <br>
+                    <code>pkg-config --cflags --libs opencv4</code>
+                    <br>
+                    <br>
+                    <img src="imgs/opencv_package_inclusion.jpg" style="width: 900px; height: 200ox;"> 
+                </li>
+                <br><br>
+                <li>
+                    Similarly, when i tried for OpenGL like so: 
+                    <br><br>
+                    <code>pkg-config --cflags --libs gl</code>
+                    <br><br>
+                    <img src="imgs/opengl_package_inclusion.jpg" style="width: 900px; height: 60px;">
+                    <br><br>
+                </li>
+
+                <li>
+                    Finally, coming to the error : the error i got was as follows : <br><br> 
+                    <img src="imgs/glut_error.jpg" style="width: 600px; height: 100px;">
+                    <br>
+                    <br>
+                    if you look back at the headers available in the GL package, you will find that the glut.h header isnt present ! <bold> DUH! THAT'S WHY IT DOSENT WORK *FACEPALM*</bold>
+                </li>
+                <li>
+                    Okay!, but now you understood, how you are including headers from different pacakges.
+                </li>
+                <li>
+                    So I speculate that once we include the packages in the compilation command (using <code>pkg-config</code>) we 
+                    the included package's headers are compiled, and we get relevant executables. (is this all linkage is?) 
+                    <bold>TBD</bold>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>
+
+</html>
