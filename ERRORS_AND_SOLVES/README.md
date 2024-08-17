@@ -147,7 +147,17 @@ int main(){
   printf("unexpected behaviour %f", temp.at<double>(0)); // you never know what the value of temp[0] will be due to UNEXPECTED BEHAVIOUR
 }
 ```
-<b> MAKE SURE YOU ASSIGN VALUES, AND NOT REFERENCE/POINTERS.
+<b> MAKE SURE YOU ASSIGN VALUES, AND NOT REFERENCE/POINTERS.</b>
 </details>
 
+<details>
+<summary>
+  using #inclde< xxx > instead of #include"xxx" gives  'xxx' file not found error while linking.
+</summary>
 
+  checkout this link : <a href="https://gcc.gnu.org/onlinedocs/gcc-2.95.3/cpp_1.html#SEC6">link</a>
+
+  aparently, the #include "xxx" searches for header files "specific to the current program"  , i.e. starts searching with the directory in which the file (which has the #include command) is present. 
+
+  the #include < xxx > searches for 'system header files' that is standard list of system directories, (i.e. not the input file's).
+</details>
